@@ -6,9 +6,6 @@ export const HomeContainer = styled('main', {
   minHeight: 656,
 
   display: 'flex',
-  gap: '3rem',
-
-  background: 'red',
 
   marginLeft: 'auto',
 });
@@ -18,7 +15,7 @@ export const Product = styled('a', {
 
   borderRadius: 8,
 
-  padding: '0.25rem',
+  // padding: '0.25rem',
 
   cursor: 'pointer',
 
