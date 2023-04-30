@@ -7,6 +7,8 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'center',
+
+  marginBottom: '2rem',
 });
 
 export const Header = styled('header', {
