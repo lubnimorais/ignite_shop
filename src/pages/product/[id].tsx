@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import Stripe from 'stripe';
@@ -50,23 +51,32 @@ export default function ProductPage({ product }: IProductPageProps) {
   }, [product.defaultPriceId]);
 
   return (
-    <ProductContainer>
-      <ImageContainer>
-        <Image src={product.imageUrl} alt="" width={520} height={480} />
-      </ImageContainer>
+    <>
+      <Head>
+        <title>{product.name} | Ignite Shop</title>
+      </Head>
 
-      <ProductDetail>
-        <h1>{product.name}</h1>
+      <ProductContainer>
+        <ImageContainer>
+          <Image src={product.imageUrl} alt="" width={520} height={480} />
+        </ImageContainer>
 
-        <span>{product.price_formatted}</span>
+        <ProductDetail>
+          <h1>{product.name}</h1>
 
-        <p>{product.description}</p>
+          <span>{product.price_formatted}</span>
 
-        <button disabled={isCreatingCheckoutSession} onClick={handleByProduct}>
-          Comprar agora
-        </button>
-      </ProductDetail>
-    </ProductContainer>
+          <p>{product.description}</p>
+
+          <button
+            disabled={isCreatingCheckoutSession}
+            onClick={handleByProduct}
+          >
+            Comprar agora
+          </button>
+        </ProductDetail>
+      </ProductContainer>
+    </>
   );
 }
 
